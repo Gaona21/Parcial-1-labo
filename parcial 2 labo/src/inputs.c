@@ -165,7 +165,8 @@ int Menu(){
 	printf("3.Ordenar lista por autor\n");
 	printf("4.Mostrar lista libro\n");
 	printf("5.Lista libros de la editoral Minotauro\n");
-	printf("6.Salir\n");
+	printf("6.Generar el archivo de salida “mapeado.csv”\n");
+	printf("7.Salir\n");
 
 	getNumero(&opcion, "\nOpcion: ");
 

@@ -12,10 +12,9 @@ int main(void) {
 	char nombreArchivo[51];
 
 	LinkedList* listaLibro = ll_newLinkedList();
-
 	LinkedList* listaEditorial = ll_newLinkedList();
-
 	LinkedList* listaResultado = ll_newLinkedList();
+	LinkedList* listaMapeado = ll_newLinkedList();
 
 
 
@@ -33,7 +32,7 @@ int main(void) {
 				break;
 
 			case 3:
-				controller_sortEmployee(listaLibro);
+				controller_sortLibro(listaLibro);
 				break;
 
 			case 4:
@@ -42,21 +41,26 @@ int main(void) {
 
 			case 5:
 				controller_FilterEditorialMinotauro(listaLibro,listaResultado,listaEditorial);
-				controller_ListLibroConEditorial(listaResultado, listaEditorial);
 				break;
 
 			case 6:
+				controller_MapLibro(listaLibro,listaMapeado);
+				controller_loadFromText("mapeado.csv", listaMapeado);
+				controller_ListLibroConEditorial(listaMapeado, listaEditorial);
+				break;
+
+			case 7:
 				printf("\nSe cerro el programa...\n");
 				break;
 
 			default:
 				printf("\nOpcion incorrecta\n");
 		}
-		if(opcion!=6){
+		if(opcion!=7){
 			system("pause");
 		}
 
-	}while(opcion != 6);
+	}while(opcion != 7);
 
 	return EXIT_SUCCESS;
 }

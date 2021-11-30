@@ -41,4 +41,5 @@ void MostrarLibroConEditorial(eLibro* this,eEditorial* thisE);
 
 int ordenarPorAutor(void* a1, void* a2);
 int filtroMinotauro(void* this);
+int AplicarDescuento(void* this);
 #endif /* LIBRO_H_ */

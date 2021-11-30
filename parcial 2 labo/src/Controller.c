@@ -1,12 +1,6 @@
 #include "Controller.h"
 
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+
 int controller_loadFromText(char* path , LinkedList* pArrayListLibro)
 {
 	int retorno = -1;
@@ -32,13 +26,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayListLibro)
     return retorno;
 }
 
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+
 int controller_loadFromBinary(char* path , LinkedList* pArrayListLibro)
 {
 	int retorno = -1;
@@ -63,13 +51,7 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListLibro)
     return retorno;
 }
 
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+
 int controller_loadFromTextEditorial(char* path , LinkedList* pArrayListEditorial)
 {
 	int retorno = -1;
@@ -95,13 +77,7 @@ int controller_loadFromTextEditorial(char* path , LinkedList* pArrayListEditoria
     return retorno;
 }
 
-/** \brief Listar libro
- *
- * \param path char*
- * \param pArrayListLibro LinkedList*
- * \return int
- *
- */
+
 int controller_ListLibro(LinkedList* pArrayListLibro)
 {
 	int retorno = -1;
@@ -125,13 +101,7 @@ int controller_ListLibro(LinkedList* pArrayListLibro)
     return retorno;
 }
 
-/** \brief Listar editorial
- *
- * \param path char*
- * \param pArrayListeditorial LinkedList*
- * \return int
- *
- */
+
 int controller_ListEditorial(LinkedList* pArrayListEditorial)
 {
 	int retorno = -1;
@@ -154,6 +124,7 @@ int controller_ListEditorial(LinkedList* pArrayListEditorial)
 	}
     return retorno;
 }
+
 
 int controller_ListLibroConEditorial(LinkedList* pArrayListLibro,LinkedList* pArrayListEditorial)
 {
@@ -183,14 +154,8 @@ int controller_ListLibroConEditorial(LinkedList* pArrayListLibro,LinkedList* pAr
     return retorno;
 }
 
-/** \brief Ordenar empleados
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
-int controller_sortEmployee(LinkedList* pArrayListLibro)
+
+int controller_sortLibro(LinkedList* pArrayListLibro)
 {
 	int retorno= -1;
 	int len;
@@ -207,6 +172,7 @@ int controller_sortEmployee(LinkedList* pArrayListLibro)
 	}
     return retorno;
 }
+
 
 int controller_FilterEditorialMinotauro(LinkedList* pArrayListLibro, LinkedList* ListaResultado, LinkedList* ListaEditorial)
 {
@@ -226,13 +192,7 @@ int controller_FilterEditorialMinotauro(LinkedList* pArrayListLibro, LinkedList*
     return retorno;
 }
 
-/** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+
 int controller_saveAsText(char* path , LinkedList* pArrayListLibro)
 {
 	int retorno = -1;
@@ -265,13 +225,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListLibro)
     return retorno;
 }
 
-/** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+
 int controller_saveAsBinary(char* path , LinkedList* pArrayListLibro)
 {
 	int retorno = -1;
@@ -307,4 +261,59 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListLibro)
     return retorno;
 }
 
+int controller_MapLibro(LinkedList* this, LinkedList* copiaThis){
+	int retorno =-1;
+	int len = ll_len(this);
+
+	copiaThis = ll_clone(this);
+
+	if(this!=NULL){
+		if(len>0){
+			ll_map(copiaThis, AplicarDescuento);
+
+			controller_saveAsTextMapeado("mapeado.csv", copiaThis);
+
+			printf("\nSe aplico el descuento correspondiente.\n\n");
+
+			retorno = 0;
+		}else{
+			printf("\nPrimero debe cargar los datos.\n\n");
+		}
+	}
+	return retorno;
+}
+
+int controller_saveAsTextMapeado(char* path , LinkedList* pArrayListLibro)
+{
+	int retorno = -1;
+	int len;
+
+	eLibro* pLibro = NULL;
+	FILE* pArchivo = NULL;
+
+	if(pArrayListLibro!=NULL){
+		pArchivo = fopen(path,"w");
+
+		if(pArchivo != NULL){
+			len = ll_len(pArrayListLibro);
+
+			if(len>0){
+				fprintf(pArchivo,"idLibro,titulo,autor,precio,idEditorial\n");
+				for(int i=0; i<len;i++){
+					pLibro =(eLibro*) ll_get(pArrayListLibro, i);
+
+						fprintf(pArchivo,"%d,%s,%s,%.2f,%d\n",pLibro->idLibro,pLibro->titulo,pLibro->autor,pLibro->precio,pLibro->idEditorial);
+				}
+			}else{
+				printf("\nNo hay nada para guardar.\n\n");
+			}
+			retorno = 0;
+
+		}else{
+			printf("\nNo se encontro el archivo.\n\n");
+		}
+	}
+	fclose(pArchivo);
+    return retorno;
+}
 

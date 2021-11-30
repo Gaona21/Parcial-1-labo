@@ -160,10 +160,14 @@ int ordenarPorAutor(void* a1, void* a2){
 
 int filtroMinotauro(void* this){
 	int retorno = -1;
+	int idaux;
 	eLibro* pLibro = NULL;
+
 	if(this!=NULL){
 		pLibro = (eLibro*) this;
-		if(pLibro->idEditorial == 4){
+		libro_GetIdEditorial(pLibro, &idaux);
+
+		if(idaux == 4){
 			retorno = 1;
 		}else{
 			retorno = 0;
@@ -171,4 +175,47 @@ int filtroMinotauro(void* this){
 	}
 	return retorno;
 }
+
+int AplicarDescuento(void* this){
+	int retorno = -1;
+	int descuento = 0;
+	int auxIdEditorial;
+	float auxPrecio;
+
+	eLibro* pLibro = NULL;
+
+	if(this!=NULL){
+		pLibro = (eLibro*) this;
+		libro_GetIdEditorial(pLibro, &auxIdEditorial);
+		libro_GetPrecio(pLibro, &auxPrecio);
+
+
+		if(auxIdEditorial == 1 && auxPrecio >= 300) {
+
+			descuento = 20;
+		}
+
+		if(auxIdEditorial == 2 && auxPrecio <=200){
+
+
+			descuento = 10;
+
+		}
+
+		auxPrecio = auxPrecio-((auxPrecio*descuento)/100);
+		libro_SetPrecio(pLibro, auxPrecio);
+
+		retorno = descuento;
+	}
+	return retorno;
+}
+
+
+
+
+
+
+
+
+
 

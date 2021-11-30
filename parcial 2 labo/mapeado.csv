@@ -1,0 +1,101 @@
+idLibro,titulo,autor,precio,idEditorial
+1,Macropus eugenii,Lavinie,551.22,1
+2,Procyon lotor,Whittaker,909.68,6
+3,Crocuta crocuta,Ethel,2.87,5
+4,Chionis alba,Ruben,19.75,1
+5,Anastomus oscitans,Oby,608.16,5
+6,Carduelis pinus,Larina,783.98,2
+7,Bradypus tridactylus,Rora,809.50,2
+8,Phalacrocorax carbo,Aundrea,420.83,3
+9,Dicrostonyx groenlandicus,Emelia,269.70,4
+10,Ara chloroptera,Troy,499.82,4
+11,Varanus salvator,Deanna,279.19,2
+12,Antilope cervicapra,Calli,552.36,5
+13,Grus rubicundus,Tish,627.84,6
+14,Felis silvestris lybica,Al,863.58,2
+15,Ratufa indica,Sybil,33.91,4
+16,Hyaena hyaena,Barbi,432.56,2
+17,Marmota monax,Donaugh,618.32,6
+18,Ratufa indica,Matias,924.18,5
+19,Phascolarctos cinereus,Sergent,914.43,5
+20,Papio cynocephalus,Alvera,564.60,3
+21,Tamiasciurus hudsonicus,Jessy,72.46,6
+22,Corvus albus,Nanon,46.66,2
+23,Uraeginthus bengalus,Mel,467.61,5
+24,Psophia viridis,Lizette,422.03,4
+25,Casmerodius albus,Rhetta,652.57,4
+26,Hystrix indica,Noella,737.13,5
+27,Gymnorhina tibicen,Melisse,214.61,4
+28,Cynictis penicillata,Putnem,885.35,3
+29,Potamochoerus porcus,Astrid,452.82,1
+30,Alcelaphus buselaphus caama,Germaine,808.52,3
+31,Motacilla aguimp,Boote,684.70,3
+32,Mycteria ibis,Penn,380.52,6
+33,Anastomus oscitans,Carrie,580.04,4
+34,Zenaida asiatica,Eduino,329.19,4
+35,Uraeginthus granatina,Isabella,350.04,3
+36,Acridotheres tristis,Sawyere,103.76,2
+37,Butorides striatus,Alida,228.47,6
+38,Cervus unicolor,Jillian,416.46,4
+39,Sitta canadensis,Aurea,933.43,4
+40,Pelecans onocratalus,Anastasie,157.46,3
+41,unavailable,Shara,766.74,6
+42,Columba livia,Tansy,356.67,2
+43,Callorhinus ursinus,Kally,148.50,2
+44,Gymnorhina tibicen,Malinda,164.05,3
+45,Alectura lathami,Hillary,125.67,5
+46,Odocoileus hemionus,Chloette,71.17,6
+47,Choloepus hoffmani,Tarra,454.18,3
+48,Varanus sp.,Margi,64.34,1
+49,Sitta canadensis,Quincy,746.04,2
+50,Macropus rufus,Jareb,81.67,4
+51,Columba palumbus,Walliw,581.72,6
+52,Cordylus giganteus,Cristina,77.32,4
+53,Acrobates pygmaeus,Lennard,197.51,5
+54,Chlidonias leucopterus,Morgan,82.97,4
+55,Spheniscus mendiculus,Janette,881.90,4
+56,Nesomimus trifasciatus,Erick,564.04,6
+57,Ictonyx striatus,Erwin,449.70,4
+58,Dasyurus maculatus,Evey,202.80,3
+59,Macropus robustus,Jamison,546.80,2
+60,Varanus salvator,Libby,584.65,3
+61,Sylvicapra grimma,Augie,91.18,6
+62,Pteronura brasiliensis,Ulric,618.46,3
+63,Eudromia elegans,Harman,586.18,5
+64,Felis silvestris lybica,Mufi,879.57,3
+65,Felis concolor,Marsh,728.66,5
+66,Tiliqua scincoides,Sky,222.10,5
+67,Thylogale stigmatica,Laney,272.17,3
+68,Potorous tridactylus,Christie,311.84,1
+69,unavailable,Dill,90.45,5
+70,Sula dactylatra,Carter,566.53,3
+71,Aonyx capensis,Evonne,778.91,2
+72,Phoenicopterus ruber,Zared,630.26,1
+73,Gyps bengalensis,Ade,503.43,3
+74,unavailable,Shae,751.21,5
+75,Ursus maritimus,Nataline,121.14,5
+76,Varanus komodensis,Mikol,892.61,6
+77,Alopex lagopus,Heddi,327.34,6
+78,Aonyx capensis,Taber,578.02,1
+79,Vulpes vulpes,Carina,953.22,2
+80,unavailable,Faber,224.97,6
+81,Madoqua kirkii,Leshia,158.80,5
+82,Connochaetus taurinus,Donetta,906.89,5
+83,Canis aureus,Jephthah,260.72,2
+84,Pycnonotus nigricans,Ethelred,238.58,2
+85,Grus antigone,Niels,282.33,2
+86,Colaptes campestroides,Nani,617.84,1
+87,Boa constrictor mexicana,Erena,764.29,1
+88,Hyaena hyaena,Vin,212.16,5
+89,Phalacrocorax carbo,Kathlin,623.46,4
+90,Eubalaena australis,Linea,778.90,1
+91,Felis caracal,Melisse,838.61,2
+92,Canis lupus,Lilly,511.95,3
+93,Aegypius tracheliotus,Harper,267.48,1
+94,Chauna torquata,Stevie,672.20,3
+95,Laniaurius atrococcineus,Henka,905.47,6
+96,Canis mesomelas,Kele,305.88,4
+97,Laniarius ferrugineus,Curr,571.94,1
+98,Alligator mississippiensis,Sheppard,248.03,2
+99,Pelecans onocratalus,Sigismondo,998.08,3
+100,Corvus albus,Bertha,128.86,6

@@ -563,6 +563,12 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 
 }
 
+/// @fn LinkedList ll_filter*(LinkedList*, int(*)(void*))
+/// @brief crea lista nueva con los elementos deseados
+///
+/// @param this lista
+/// @param fn funcion creiterio
+/// @return listaResultado
 LinkedList* ll_filter(LinkedList* this, int (*fn)(void* element)){
 
 	int len = ll_len(this);
@@ -583,4 +589,28 @@ LinkedList* ll_filter(LinkedList* this, int (*fn)(void* element)){
 
 	return listaResultado;
 }
+
+int ll_map(LinkedList* this, int (*fn)(void* element)){
+	int retorno = -1;
+	int len;
+
+	void* pElement;
+
+	if(this!=NULL && fn!=NULL){
+		len = ll_len(this);
+
+		for(int i=0; i<len; i++){
+
+
+			pElement = ll_get(this, i);
+
+			fn(pElement);
+		}
+
+
+		retorno = 0;
+	}
+	return retorno;
+}
+
 
